@@ -13,7 +13,7 @@
 <body>
 	<div class="container hide" id="container">
 		<div class="jumbotron text-center">
-			<h1 class="mainHeader">Check With Me</h1>
+			<h1 class="mainHeader"><strong>Check With Me</strong></h1>
 		</div>
 		<div class="panel-group">
 			<div class="panel panel-primary">
@@ -32,16 +32,16 @@
 					</form>
 				</div>
 				<div class="panel-body" id="map-it">
-					<button class="btn btn-default"><a href="search.html" target="_blank">Map It</a></button>
-					<button class="btn btn-primary hide" id="search-again" onClick="window.location.reload()">New Search</button>
+					<a href="search.html" target="_blank"><button class="btn btn-primary hide" id="google-maps">Map It</button></a>
+					<button class="btn btn-success hide" id="search-again" onClick="window.location.reload()">New Search</button>
 				</div>
 			</div>
 		</div>
 	</div>
 
 	<div id="wrapper">
-	    <form id="form1" method="post" action="" onsubmit="return check_form();">
-	      <p id="login_label"><span style='color:#2F6FB9; font-size:1.5em'>CHECK WITH ME!</span><br>USER LOGIN</p>
+	    <form id="form1">
+	      <p id="login_label"><span style='color:#2F6FB9'>CHECK WITH ME!<br>USER LOGIN</p>
 	      <input type="text" id="email" placeholder="Email">
 	      <br>
 	      <input type="password" id="password" placeholder="Password">
@@ -49,6 +49,7 @@
 	      <input type="submit" value="LOGIN" id="login">
 	      <input type="submit" value="SIGNUP" id="signup">
 	      <p></p>
+	      <p id="reset-password">Reset Password?</p>
 	      <br>
 	    </form>
     </div>

@@ -10,6 +10,7 @@ body
 .jumbotron {
 	background-color: #fff;
 	height: 150px;
+	margin-bottom: 18px;
 }
 
 .jumbotron h1 {
@@ -41,8 +42,8 @@ body
 }
 
 .btn-default {
-	display: none;
-	padding: 7px 15px;
+	padding: 6px 15px;
+	color: #2F6FB9;
 }
 
 /**Google Map**/
@@ -85,7 +86,7 @@ h3 {
 }
 #form1 p
 {
-	color:#FA8258;
+	color:#2F6FB9;
 	font-weight:bold;
 }
 #form1 #login_label
@@ -109,12 +110,16 @@ h3 {
 	margin-top:10px;
 	width:300px;
 	height:40px;
-	background-color:#FA8258;
+	background-color: #2F6FB9;
 	border:none;
 	color:white;
-	box-shadow:0px 3px 0px 0px #FE642E;
+	box-shadow:0px 3px 0px 0px #2F6FB9;
 	border-radius:3px;
 	font-weight:bold;
+}
+
+p {
+    cursor: pointer;
 }
 
 /*#logout {
