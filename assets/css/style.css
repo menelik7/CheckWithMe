@@ -157,8 +157,9 @@ h3 {
 	font-family: 'Lakki Reddy', cursive;
 }
 
-p #reset-password {
+#reset-password {
 	background: #fff;
+	cursor: pointer;
 }
 /*#logout {
 	display: none;
