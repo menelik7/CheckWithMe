@@ -50,7 +50,7 @@ body
 
 }
 
-.panel-group .panel {
+.panel-group .panel, .panel.primary, #map {
     margin-bottom: 0;
     border-radius: 25px;
 }
@@ -89,13 +89,11 @@ h3 {
 	background-color: grey;
 }
 
+#login_label1 {
+	text-align: right;
+}
 
-
-
-
-
-
-#wrapper
+#wrapper, #reset-email
 {
 	text-align:center;
 	margin:0 auto;
@@ -103,7 +101,7 @@ h3 {
 	width:995px;
 	
 }
-#form1
+#form1, #form2
 {
 	background-color:white;
 	width:380px;
@@ -111,7 +109,6 @@ h3 {
 	margin-top: 250px;
 	box-shadow:0px 0px 10px 0px #D8D8D8;
 	border-radius: 25px;
-
 }
 #form1 p
 {
@@ -125,7 +122,7 @@ h3 {
 	background-color: black;
 
 }
-#form1 #login_label
+#form1 #login_label1, #form1 #login_label
 {
 	color:#1C9EFC;
 	padding:20px;
@@ -157,6 +154,9 @@ h3 {
 	font-family: 'Lakki Reddy', cursive;
 }
 
+#submit {
+	margin-bottom: 15px;
+}
 #reset-password {
 	background: #fff;
 	cursor: pointer;

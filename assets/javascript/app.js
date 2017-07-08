@@ -25,6 +25,8 @@
   const search_again = document.getElementById('search-again');
   const google_maps = document.getElementById('google-maps');
   const reset_password = document.getElementById('reset-password');
+  const reset_email = document.getElementById('reset-email');
+  const submit = document.getElementById('submit');
 
   //Add login event
   btnLogin.addEventListener('click', e => {
@@ -74,9 +76,17 @@
   })
 
   reset_password.addEventListener('click', e => {
-    var emailAdd = prompt("Please provide an email address, and check your inbox for instructions");
+    reset_email.classList.remove('hide');
+    $('#wrapper').hide();
+
+  });
+
+  submit.addEventListener('click', e => {
+    reset_email.classList.add('hide');
+    $('#wrapper').show();
+    e.preventDefault();
     var auth = firebase.auth();
-    var emailAddress = emailAdd;
+    var emailAddress = $("#reset-email-input").val().trim();
     auth.sendPasswordResetEmail(emailAddress).then(function() {
       // Email sent.
     }, function(error) {
