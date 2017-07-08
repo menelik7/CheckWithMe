@@ -4,47 +4,80 @@ body
 	margin:0 auto;
 	padding:0px;
 	font-family:helvetica;
-	background: url("../images/whitey.png");
+	background: url("../images/background.jpg");
 }
 
 .jumbotron {
-	background-color: #fff;
+	background-color:black ;
 	height: 150px;
-	margin-bottom: 18px;
+	background-image: url("../images/spying.jpg");
+	background-size: 21%;
+    background-repeat: no-repeat; 
+
 }
+.container .jumbotron, .container-fluid .jumbotron {
+    padding-right: 15px;
+    padding-left: 15px;
+    border-radius: 25px;
+    }
 
 .jumbotron h1 {
 	margin: auto;
-	color: #2F6FB9;
+	color: white;
+	font-family: 'Lakki Reddy', cursive;
 }
 .container {
 	width: 70%;
 	padding-top: 15px;
+	border-radius: 25px;
 }
 
 #check {
 	font-weight: bold;
 	text-align:center;
 	font-size: 2em;
+	color:#1C9EFC;
+	background-color: black;
+	/*font-family: 'Lobster', cursive;*/
+	border-radius: 25px;
 }
 
-#results {
+.panel-body {
 	padding: 20px;
+	/*font-family: 'Lobster', cursive;*/
+	font-size: 1.2em;
+
+
 }
 
-#map-it {
-	padding-top: 0;
-} 
+.panel-group .panel {
+    margin-bottom: 0;
+    border-radius: 25px;
+}
 
 #display {
+	max-width:60%;
 	margin:0;
-	font-size: 1.4em;
+	font-size: 1.5em;
 }
 
-.btn-default {
-	padding: 6px 15px;
-	color: #2F6FB9;
+.btn-default,
+.btn-warning {
+	/*display: none;*/
+	padding: 7px 15px;
+	border-radius: 25px;
 }
+
+#btn{
+	background:black;
+	color:#1C9EFC;
+	border-radius: 25px;
+}
+
+.form-control{
+	border-radius: 25px;
+}
+
 
 /**Google Map**/
 h3 {
@@ -61,41 +94,45 @@ h3 {
 
 
 
-/*body
-{
- text-align:center;
- width:100%;
- margin:0 auto;
- padding:0px;
- font-family:helvetica;
-}*/
+
 #wrapper
 {
 	text-align:center;
 	margin:0 auto;
 	padding:0px;
 	width:995px;
+	
 }
 #form1
 {
 	background-color:white;
 	width:380px;
 	margin-left:305px;
-	margin-top: 200px;
+	margin-top: 250px;
 	box-shadow:0px 0px 10px 0px #D8D8D8;
+	border-radius: 25px;
+
 }
 #form1 p
 {
-	color:#2F6FB9;
+	color:#FA8258;
 	font-weight:bold;
+	font-family: 'Lakki Reddy', cursive;
+	background: url("../images/spying.jpg");
+	background-size: 30%;
+	display: flex-start;
+	background-repeat: no-repeat; 
+	background-color: black;
+
 }
 #form1 #login_label
 {
-	color:#FA8258;
+	color:#1C9EFC;
 	padding:20px;
 	font-size:25px;
 	border-bottom:1px solid #E6E6E6;
 	font-weight:bold;
+	border-radius: 25px;
 }
 #form1 input[type="text"],input[type="password"]
 {
@@ -103,24 +140,25 @@ h3 {
 	height:40px;
 	padding-left:10px;
 	margin-top:10px;
-	border:1px solid #D8D8D8;
+	border:1px solid #1C9EFC;
+	border-radius: 25px;
+
 }
 #form1 input[type="submit"]
 {
 	margin-top:10px;
 	width:300px;
 	height:40px;
-	background-color: #2F6FB9;
+	background-color:black;
 	border:none;
-	color:white;
-	box-shadow:0px 3px 0px 0px #2F6FB9;
-	border-radius:3px;
-	font-weight:bold;
+	color:#1C9EFC;
+	box-shadow:0px 3px 0px 0px #1C9EFC;
+	border-radius:25px;
+	font-family: 'Lakki Reddy', cursive;
 }
 
-#reset-password {
-    cursor: pointer;
-    margin-top: 20px;
+p #reset-password {
+	background: #fff;
 }
 /*#logout {
 	display: none;

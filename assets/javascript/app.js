@@ -93,7 +93,7 @@ $("#btn").on("click", function(event) {
 	// Grabbing text the user typed into the search input
 	var input = $("#phone").val().trim();
   $("#phone").val("");
-	var queryURL ="https://proapi.whitepages.com/3.0/phone.json?api_key=28294d0daa2d455582c10fbf26d651f7&phone="+ input;
+	var queryURL ="https://proapi.whitepages.com/3.0/phone.json?api_key=0d6a100b67b541b0a8f563b6b7b618f5&phone="+ input;
 
 	$.ajax({
     url: queryURL,
@@ -117,7 +117,7 @@ $("#btn").on("click", function(event) {
       for (var i = 0; i < telnum.length; i++) {
           format += (char[i] || '') + telnum[i];
       }
-    $('#check').text("Phone Number: " + format);
+    $('#check').text(format);
   },function(errorObject) {
     console.log("The read failed: " + errorObject.code);
   });
