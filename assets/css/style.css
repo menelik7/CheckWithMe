@@ -155,11 +155,12 @@ h3 {
 }
 
 #submit {
-	margin-bottom: 15px;
+	margin-bottom: 30px;
 }
 #reset-password {
 	background: #fff;
 	cursor: pointer;
+	margin-top: 20px;
 }
 /*#logout {
 	display: none;

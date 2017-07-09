@@ -10,9 +10,6 @@
   firebase.initializeApp(config);
 
   var database = firebase.database();
-  // database.ref().onDisconnect().set({
-  //   result: 0 
-  // });
 
   //Get Elements
   const txtEmail = document.getElementById('email');
@@ -28,71 +25,71 @@
   const reset_email = document.getElementById('reset-email');
   const submit = document.getElementById('submit');
 
-  //Add login event
-  btnLogin.addEventListener('click', e => {
-    e.preventDefault();
-    
-    //Get email
-    const email = txtEmail.value;
-    const pass = txtPassword.value;
-    const auth = firebase.auth();
-    $('#email').val("");
-    $('#password').val("");
-
-    //Sign in
-    const promise = auth.signInWithEmailAndPassword(email, pass);
-    promise.catch(e => alert(e.message));
-  });
-
-  //Signup user
-  btnSignUp.addEventListener('click', e => {
-    e.preventDefault();
-    
+//Add login event
+btnLogin.addEventListener('click', e => {
+  e.preventDefault();
+  
   //Get email
-    const email = txtEmail.value;
-    const pass = txtPassword.value;
-    const auth = firebase.auth();
+  const email = txtEmail.value;
+  const pass = txtPassword.value;
+  const auth = firebase.auth();
+  $('#email').val("");
+  $('#password').val("");
 
-  //Sign in
-    const promise = auth.createUserWithEmailAndPassword(email, pass);
-    promise.catch(e => alert(e.message));
+//Sign in
+const promise = auth.signInWithEmailAndPassword(email, pass);
+promise.catch(e => alert(e.message));
+});
+
+//Signup user
+btnSignUp.addEventListener('click', e => {
+  e.preventDefault();
+  
+//Get email and password
+  const email = txtEmail.value;
+  const pass = txtPassword.value;
+  const auth = firebase.auth();
+
+//Sign in
+const promise = auth.createUserWithEmailAndPassword(email, pass);
+  promise.catch(e => alert(e.message));
+});
+
+//Logout user
+btnLogout.addEventListener('click', e => {
+  firebase.auth().signOut();
+});
+
+//Add a real time auth listener
+firebase.auth().onAuthStateChanged(firebaseUser => {
+  if (firebaseUser){
+    console.log(firebaseUser);
+    wrapper.classList.add('hide');
+    container.classList.remove('hide');
+
+  } else{
+    console.log("Not logged in!");
+  }
+})
+//Reset password
+reset_password.addEventListener('click', e => {
+  reset_email.classList.remove('hide');
+  $('#wrapper').hide();
+
+});
+
+submit.addEventListener('click', e => {
+  reset_email.classList.add('hide');
+  $('#wrapper').show();
+  e.preventDefault();
+  var auth = firebase.auth();
+  var emailAddress = $("#reset-email-input").val().trim();
+  auth.sendPasswordResetEmail(emailAddress).then(function() {
+    // Email sent.
+  }, function(error) {
+    // An error happened.
   });
-
-  //Logout user
-  btnLogout.addEventListener('click', e => {
-    firebase.auth().signOut();
-  });
-
-  //Add a real time listener
-  firebase.auth().onAuthStateChanged(firebaseUser => {
-    if (firebaseUser){
-      console.log(firebaseUser);
-      wrapper.classList.add('hide');
-      container.classList.remove('hide');
-
-    } else{
-      console.log("Not logged in!");
-    }
-  })
-
-  reset_password.addEventListener('click', e => {
-    reset_email.classList.remove('hide');
-    $('#wrapper').hide();
-
-  });
-
-  submit.addEventListener('click', e => {
-    reset_email.classList.add('hide');
-    $('#wrapper').show();
-    e.preventDefault();
-    var auth = firebase.auth();
-    var emailAddress = $("#reset-email-input").val().trim();
-    auth.sendPasswordResetEmail(emailAddress).then(function() {
-      // Email sent.
-    }, function(error) {
-      // An error happened.
-    });
-  });
+});
 
 $("#btn").on("click", function(event) {
   event.preventDefault();
@@ -199,8 +196,9 @@ $("#btn").on("click", function(event) {
   google_maps.classList.remove('hide');
   search_again.classList.remove('hide');
 });
-
+//Google maps function
 function initMap() {
+  //check for the most current address and pass the long. and lat into the function
   database.ref('result/current_addresses/1').on('value', function(snapshot){
     if (snapshot.child('lat_long').exists()) {
       var lat_longRef = database.ref('result/current_addresses/1/lat_long');
@@ -224,7 +222,7 @@ function initMap() {
     });
   });
 }
-
+//event listener to intiate the init function for google maps
 google_maps.addEventListener('click', e => {
 initMap();
 });
