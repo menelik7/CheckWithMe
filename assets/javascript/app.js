@@ -98,7 +98,7 @@ $("#btn").on("click", function(event) {
   $("#phone").val("");
 
   // Storing our Whitepages API URL 
-	var queryURL ="https://proapi.whitepages.com/3.0/phone.json?api_key=0d6a100b67b541b0a8f563b6b7b618f5&phone="+ input;
+	var queryURL ="https://proapi.whitepages.com/3.0/phone.json?api_key=97f347b40b8c46dca3e5401c14d513e2&phone="+ input;
   // Perfoming an AJAX GET request to our queryURL
 	$.ajax({
     url: queryURL,
@@ -224,7 +224,7 @@ function initMap() {
 }
 //event listener to intiate the init function for google maps
 google_maps.addEventListener('click', e => {
-initMap();
+  initMap();
 });
 
 
