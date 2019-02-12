@@ -201,10 +201,10 @@ function initMap() {
   //check for the most current address and pass the long. and lat into the function
   database.ref('result/current_addresses/1').on('value', function(snapshot){
     if (snapshot.child('lat_long').exists()) {
-      var lat_longRef = database.ref('result/current_addresses/1/lat_long');
+      var lat_longRef = database.ref('result/current_addresses/0/lat_long');
     }
     else {
-      var lat_longRef = database.ref('result/current_addresses/0/lat_long');
+      var lat_longRef = database.ref('result/current_addresses/1/lat_long');
     }
     // Store lat-long info and plug into our Google Maps functions
     lat_longRef.on('value', function(snapshot){
